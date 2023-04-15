@@ -1,0 +1,15 @@
+.header{
+    background-color: aliceblue;
+}
+.header h2{
+    margin-left: -10px;
+    font-family:cursive
+}
+.logo{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+
+
