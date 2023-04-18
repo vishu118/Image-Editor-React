@@ -19,7 +19,13 @@
     height: 80%;
     background-color: #fff;
     box-shadow: 0 8px 16px 0px rgb(201, 201, 201);
+    margin: 5% auto;
+   
+}
 
+.section{
+    display: flex;
+    align-items: center;
 }
 .card_header{
     padding: 15px;
@@ -98,4 +104,13 @@
 
 .btn button{
     padding: 8px 18px;
+}
+
+.image_Section {
+display: flex;
+align-items: center;
+}
+.image_Section img{
+    width: 100%;
+    height: 300px;
 }

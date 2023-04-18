@@ -31,7 +31,8 @@ const Main = () => {
         <div className="card_header">
           <h2>Image Editor</h2>
         </div>
-        <div className="card-body">
+      <div className="section">
+      <div className="card-body">
           <div className="sidebar">
             <div className="side_body">
               <div className="filer_section">
@@ -67,6 +68,10 @@ const Main = () => {
             </div>
           </div>
         </div>
+        <div className="image_Section">
+          <img src="https://1.bp.blogspot.com/-kK7Fxm7U9o0/YN0bSIwSLvI/AAAAAAAACFk/aF4EI7XU_ashruTzTIpifBfNzb4thUivACLcBGAsYHQ/s1280/222.jpg"  alt="" />
+        </div>
+      </div>
       </div>
     </div>
   );
