@@ -1,1 +1,17 @@
 
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.editor-body{
+    display: flex;
+   justify-content: space-around;
+}
+
+.wrapper{
+    border: 2px solid ;
+    width: 80%;
+    margin: 0 auto;
+}
