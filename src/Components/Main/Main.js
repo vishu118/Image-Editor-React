@@ -51,6 +51,17 @@ const Main = () => {
                 </div>
                 <input type="range" />
               </div>
+              <div className="rotate">
+                   <div className="extra_features">
+                    <span>Rotate & Flip</span>
+                   </div>
+                 <div className="btn">
+                 <button>he</button>
+                  <button>he</button>
+                  <button>he</button>
+                  <button>he</button>
+                 </div>
+              </div>
             </div>
           </div>
         </div>
