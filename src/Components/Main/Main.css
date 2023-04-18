@@ -95,3 +95,7 @@
     justify-content: space-between;
     
 }
+
+.btn button{
+    padding: 8px 18px;
+}

@@ -1,4 +1,6 @@
 import React from "react";
+import { GrRotateLeft,GrRotateRight } from 'react-icons/gr';
+import { CgMergeVertical,CgMergeHorizontal } from 'react-icons/cg';
 import "./Main.css";
 
 const Main = () => {
@@ -56,10 +58,10 @@ const Main = () => {
                     <span>Rotate & Flip</span>
                    </div>
                  <div className="btn">
-                 <button>he</button>
-                  <button>he</button>
-                  <button>he</button>
-                  <button>he</button>
+                 <button><GrRotateLeft/></button>
+                  <button><GrRotateRight/></button>
+                  <button><CgMergeVertical/></button>
+                  <button><CgMergeHorizontal/></button>
                  </div>
               </div>
             </div>
