@@ -1,0 +1,18 @@
+.images_option{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 0;
+}
+
+.size{
+    padding: 8px 15px;
+}
+
+.reset{
+    display: flex;
+    gap: 5px;
+}
+.choose{
+    display: flex;
+    gap: 5px;
+}
