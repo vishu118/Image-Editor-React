@@ -23,36 +23,37 @@ const Main = () => {
     },
   ];
 
- 
   return (
     <div className="image-editor">
       <div className="card">
-          <div className="card_header">
-            <h2>Image Editor</h2>
-          </div>
-          <div className="card-body">
-            <div className="sidebar">
-              <div className="side_body">
-                <div className="filer_section">
-                  <span>Filters</span>
-                  <div className="filter_features">
-                    {
-                      Filters.map((ele,idx)=>{
-                        return <button key={idx} className="features">{ele.name}</button>
-                      })
-                    }
-                  </div>
+        <div className="card_header">
+          <h2>Image Editor</h2>
+        </div>
+        <div className="card-body">
+          <div className="sidebar">
+            <div className="side_body">
+              <div className="filer_section">
+                <span>Filters</span>
+                <div className="filter_features">
+                  {Filters.map((ele, idx) => {
+                    return (
+                      <button key={idx} className="features">
+                        {ele.name}
+                      </button>
+                    );
+                  })}
                 </div>
-                <div className="filter_slider">
-                                <div className="label_bar">
-                                    <label htmlFor="range">Rotate</label>
-                                    <span>100%</span>
-                                </div>
-                                <input type="range" />
-                            </div>
+              </div>
+              <div className="filter_slider">
+                <div className="sliders">
+                  <span>Rotate</span>
+                  <span>100%</span>
+                </div>
+                <input type="range" />
               </div>
             </div>
           </div>
+        </div>
       </div>
     </div>
   );

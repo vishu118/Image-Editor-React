@@ -77,4 +77,13 @@
     justify-content: center;
     align-items: center;
 }
+.sliders{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+}
+
+.filter_slider input{
+    width: 100%;
+}
   
