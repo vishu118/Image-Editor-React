@@ -70,7 +70,9 @@ const Main = () => {
           </div>
         </div>
         <div className="image_Section">
-          <img src="https://1.bp.blogspot.com/-kK7Fxm7U9o0/YN0bSIwSLvI/AAAAAAAACFk/aF4EI7XU_ashruTzTIpifBfNzb4thUivACLcBGAsYHQ/s1280/222.jpg"  alt="" />
+              <div className="image">
+                
+              </div>
         </div>
       </div>
       <Footer/>
