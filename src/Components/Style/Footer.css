@@ -6,6 +6,15 @@
 
 .size {
   padding: 8px 15px;
+  border-radius: 3px;
+  outline: none;
+  border: 1px solid #dad7d7;
+  cursor: pointer;
+  color: #fff;
+  font-weight: 600;
+  text-transform: capitalize;
+  font-size: 15px;
+
 }
 
 .reset {
@@ -29,21 +38,40 @@
 
 .images_option label {
   background-color: #115811;
-  margin-left: 5px;
 }
-.choose label,
-button {
-  padding: 8px;
-  border-radius: 3px;
-  outline: none;
-  border: 1px solid #dad7d7;
-  cursor: pointer;
-  color: #fff;
-  font-weight: 600;
-  text-transform: capitalize;
-  font-size: 15px;
-}
+
 
 .images_option input {
   display: none;
+}
+
+.resetbtn{
+    background-color: rgb(242,53,85);
+    padding: 8px;
+    border-radius: 3px;
+    outline: none;
+    border: 1px solid #dad7d7;
+    cursor: pointer;
+    color: #fff;
+    font-weight: 600;
+    font-size: 15px;
+}
+
+.Savebtn{
+
+    background-color: #e335f3 !important; 
+    padding: 8px;
+    border-radius: 3px;
+    outline: none;
+    border: 1px solid #dad7d7;
+    cursor: pointer;
+    color: #fff;
+    font-weight: 600;
+    font-size: 15px;
+}
+
+
+.choose label:hover{
+    transform: scale(1.03);
+    transition: all 0.5s;
 }

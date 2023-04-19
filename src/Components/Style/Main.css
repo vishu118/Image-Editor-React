@@ -146,4 +146,8 @@ background-color: #f0f0f0;
  label span{
     color: #404040;
  }
- 
+
+ button:hover{
+    transform: scale(1.05);
+    transition: all 0.5s;
+ }
