@@ -10,9 +10,9 @@ const Footer = () => {
             <button className='size'>Save Images</button>
         </div>
         <div className="choose">
-            <button className='size'><IoMdUndo/></button>
-            <button className='size'><IoMdRedo/></button>
-            <button className='size'>Crop Image</button>
+            <button className='size undo'><IoMdUndo/></button>
+            <button className='size redo'><IoMdRedo/></button>
+            <button className='size crop'>Crop Image</button>
             <label htmlFor='choose'>Choose Image</label> 
             <input type='file' id='choose'/>
         </div>
