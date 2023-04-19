@@ -1,8 +1,10 @@
 import React from "react";
 import { GrRotateLeft,GrRotateRight } from 'react-icons/gr';
 import { CgMergeVertical,CgMergeHorizontal } from 'react-icons/cg';
-import "./Main.css";
-import Footer from "./Footer/Footer";
+import { IoIosImage } from "react-icons/io";
+import Footer from "../Footer/Footer";
+import "../Style/Main.css";
+
 
 const Main = () => {
   const Filters = [
@@ -71,7 +73,10 @@ const Main = () => {
         </div>
         <div className="image_Section">
               <div className="image">
-                
+                <label htmlFor="choose">
+                <IoIosImage/>
+                <span>Choose Image</span>
+                </label>
               </div>
         </div>
       </div>

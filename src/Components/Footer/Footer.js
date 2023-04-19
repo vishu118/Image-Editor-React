@@ -1,6 +1,6 @@
 import React from 'react'
-import {IoMdUndo,IoMdRedo} from "react-icons/io"
-import "./Footer.css"
+import '../Style/Footer.css'
+import { IoIosImage,IoMdUndo,IoMdRedo } from "react-icons/io";
 
 const Footer = () => {
   return (
@@ -14,7 +14,7 @@ const Footer = () => {
             <button className='size'><IoMdRedo/></button>
             <button className='size'>Crop Image</button>
             <label htmlFor='choose'>Choose Image</label> 
-            <input type='file'/>
+            <input type='file' id='choose'/>
         </div>
     </div>
   )
