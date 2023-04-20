@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { GrRotateLeft,GrRotateRight } from 'react-icons/gr';
 import { CgMergeVertical,CgMergeHorizontal } from 'react-icons/cg';
 import { IoIosImage } from "react-icons/io";
@@ -28,6 +28,21 @@ const Main = () => {
     },
   ];
 
+  const [Image ,setImage ] = useState({
+    image : ""
+  })
+
+  const handleImage = (e)=>{
+    const { files } = e.target;
+    if (files && files.length > 0) {
+      const reader = new FileReader();
+      reader.readAsDataURL(files[0]);
+      reader.addEventListener("load", () => {
+        setImage(reader.result);
+      });
+    }
+   console.log(Image)
+  }
   return (
     <div className="image-editor">
       <div className="card">
@@ -73,6 +88,7 @@ const Main = () => {
         </div>
         <div className="image_Section">
               <div className="image">
+          
                 <label htmlFor="choose">
                 <IoIosImage/>
                 <span>Choose Image</span>
@@ -80,7 +96,7 @@ const Main = () => {
               </div>
         </div>
       </div>
-      <Footer/>
+      <Footer handleImage = {handleImage}  />
       </div>
     </div>
   );
