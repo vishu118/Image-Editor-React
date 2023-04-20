@@ -2,7 +2,7 @@ import React from 'react'
 import '../Style/Footer.css'
 import { IoMdUndo,IoMdRedo } from "react-icons/io";
 
-const Footer = ({handleImage}) => {
+const Footer = ({loadImage}) => {
   return (
     <div className='images_option'>
         <div className="reset">
@@ -14,7 +14,7 @@ const Footer = ({handleImage}) => {
             <button className='size redo'><IoMdRedo/></button>
             <button className='size crop'>Crop Image</button>
             <label htmlFor='choose' className='size'>Choose Image</label> 
-            <input type='file' id='choose' onChange = {handleImage}  />
+            <input type='file' id='choose' onChange = {loadImage}  />
         </div>
     </div>
   )

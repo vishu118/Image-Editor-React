@@ -28,20 +28,13 @@ const Main = () => {
     },
   ];
 
-  const [Image ,setImage ] = useState({
-    image : ""
-  })
+  const [PreviewImg ,setPreviewImg ] = useState(null)
 
-  const handleImage = (e)=>{
-    const { files } = e.target;
-    if (files && files.length > 0) {
-      const reader = new FileReader();
-      reader.readAsDataURL(files[0]);
-      reader.addEventListener("load", () => {
-        setImage(reader.result);
-      });
-    }
-   console.log(Image)
+  
+  const loadImage = (e)=>{
+    const file = e.target.files[0]
+    if(!file) return;
+    setPreviewImg(file);
   }
   return (
     <div className="image-editor">
@@ -88,15 +81,24 @@ const Main = () => {
         </div>
         <div className="image_Section">
               <div className="image">
-          
-                <label htmlFor="choose">
+          {
+            PreviewImg ? (
+              <img 
+               src={URL.createObjectURL(PreviewImg)}
+               alt="preview"
+              />
+            ):(
+              <label htmlFor="choose">
                 <IoIosImage/>
                 <span>Choose Image</span>
                 </label>
+            )
+          }
+               
               </div>
         </div>
       </div>
-      <Footer handleImage = {handleImage}  />
+      <Footer loadImage = {loadImage}  />
       </div>
     </div>
   );
