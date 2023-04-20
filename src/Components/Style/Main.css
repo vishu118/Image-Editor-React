@@ -64,7 +64,7 @@
     grid-gap: 8px;
 }
 
-.features{
+.filter_features button{
     padding: 8px;
     background-repeat: 3px;
     border: 1px solid #dad7d7;
@@ -73,6 +73,11 @@
     text-transform: capitalize;
 }
 
+.filter_features button.active {
+    color: #fff;
+    border-color: #f4367d;
+    background: #f4367d;
+}
 
 
 .image_editor {
