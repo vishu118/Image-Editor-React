@@ -1,7 +1,13 @@
-import React from "react";
+import React , {useState , useRef} from "react";
+import { GrRotateLeft, GrRotateRight } from "react-icons/gr";
+import { CgMergeVertical, CgMergeHorizontal } from "react-icons/cg";
+import { IoIosImage } from "react-icons/io";
+import Footer from "../Footer/Footer";
+import "../Style/Main.css"
 
-const Body = () => {
-  const filterOptions = [
+
+
+const filterOptions = [
     { id: "brightness", name: "Brightness" },
     { id: "saturation", name: "Saturation" },
     { id: "inversion", name: "Inversion" },
@@ -9,6 +15,13 @@ const Body = () => {
     { id: "contrast", name: "Contrast" },
     { id: "hueRotate", name: "HueRotate" },
   ];
+
+const Body = () => {
+
+    const [previewImg, setPreviewImg] = useState(null);
+    const [activeFilter, setActiveFilter] = useState("brightness");
+    const [sliderValue, setSliderValue] = useState(100);
+    const previewImgRef = useRef(null);
 
   return (
     <div className="container">
@@ -70,8 +83,21 @@ const Body = () => {
                 </div>
         </div>
 
-        <div className="imagePreview"></div>
+        <div className="imagePreview">
+         {previewImg ? (
+            <img
+              src={URL.createObjectURL(previewImg)}
+              alt="preview"
+              ref={previewImgRef}
+            //   onLoad={applyFilter}
+            />
+          ) : (
+            <img src="image-placeholder.svg" alt="preview-img" htmlFor="choose"/>
+          )}
+
+        </div>
       </div>
+      <Footer/>
     </div>
   );
 };
