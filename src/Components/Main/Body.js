@@ -24,13 +24,50 @@ const Body = () => {
                   key={option.id}
                   id={option.id}
                   className={activeFilter === option.id ? "active" : ""}
-                  onClick={() => handleFilterClick(option)}
+                //   onClick={() => handleFilterClick(option)}
                 >
                   {option.name}
                 </button>
               ))}
             </div>
+
+            <div className="slider">
+              <div className="filter-info">
+                <p className="name">{activeFilter}</p>
+                <p className="value">{`${sliderValue}%`}</p>
+              </div>
+              <input
+                type="range"
+                min="0"
+                // max={
+                //   activeFilter === "brightness" || activeFilter === "saturation"
+                //     ? "200"
+                //     : "100"
+                // }
+                // value={sliderValue}
+                // onChange={handleSliderChange}
+              />
+            </div>
           </div>
+          <div className="rotate">
+                  <div className="extra_features">
+                    <span>Rotate & Flip</span>
+                  </div>
+                  <div className="btn">
+                    <button>
+                      <GrRotateLeft />
+                    </button>
+                    <button>
+                      <GrRotateRight />
+                    </button>
+                    <button>
+                      <CgMergeVertical />
+                    </button>
+                    <button>
+                      <CgMergeHorizontal />
+                    </button>
+                  </div>
+                </div>
         </div>
 
         <div className="imagePreview"></div>
