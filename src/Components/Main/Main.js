@@ -1,14 +1,11 @@
-import React, { useState,useRef } from "react";
-import { GrRotateLeft,GrRotateRight } from 'react-icons/gr';
-import { CgMergeVertical,CgMergeHorizontal } from 'react-icons/cg';
+import React, { useState, useRef } from "react";
+import { GrRotateLeft, GrRotateRight } from "react-icons/gr";
+import { CgMergeVertical, CgMergeHorizontal } from "react-icons/cg";
 import { IoIosImage } from "react-icons/io";
 import Footer from "../Footer/Footer";
 import "../Style/Main.css";
 
-
 const Main = () => {
- 
-
   const filterOptions = [
     { id: "brightness", name: "Brightness" },
     { id: "saturation", name: "Saturation" },
@@ -18,7 +15,7 @@ const Main = () => {
     { id: "hueRotate", name: "HueRotate" },
   ];
 
-  const [PreviewImg ,setPreviewImg ] = useState(null)
+  const [PreviewImg, setPreviewImg] = useState(null);
   const [activeFilter, setActiveFilter] = useState("Brightness");
   const [sliderValue, setSliderValue] = useState(100);
   const [brightness, setBrightness] = useState("100");
@@ -27,13 +24,11 @@ const Main = () => {
   const [grayscale, setGrayscale] = useState("0");
   const PreviewImgRef = useRef(null);
 
-
-  
-  const loadImage = (e)=>{
-    const file = e.target.files[0]
-    if(!file) return;
+  const loadImage = (e) => {
+    const file = e.target.files[0];
+    if (!file) return;
     setPreviewImg(file);
-  }
+  };
 
   const applyFilter = () => {
     PreviewImgRef.current.style.filter = `brightness(${brightness}%) saturate(${saturation}%) invert(${inversion}%) grayscale(${grayscale}%)`;
@@ -57,7 +52,7 @@ const Main = () => {
         setSliderValue(grayscale);
     }
   };
- 
+
   const handleSliderChange = (event) => {
     setSliderValue(event.target.value);
     switch (activeFilter) {
@@ -74,89 +69,89 @@ const Main = () => {
         setGrayscale(event.target.value);
     }
   };
- 
+
   return (
-    <div className="image-editor"  >
+    <div className="image-editor">
       <div className="card">
         <div className="card_header">
           <h2>Image Editor</h2>
         </div>
-      <div className="section">
-      <div className="card-body">
-          <div className="sidebar">
-            <div className="side_body">
-              <div className="filer_section">
-                <span>Filters</span>
+        <div className="section">
+          <div className="card-body">
+            <div className="sidebar">
+              <div className="side_body">
+                <div className="filer_section">
+                  <span>Filters</span>
                   <div className="filter_features">
-                  {filterOptions.map((ele, idx) => {
-                    return (
-                      <button
-                  key={ele.id}
-                  id={ele.id}
-                  className={activeFilter === ele.id ? "active" : ""}
-                  onClick={() => handleFilterClick(ele)}
-                >
-                  {ele.name}
-                </button>
-                    );
-                  })}
+                    {filterOptions.map((ele, idx) => {
+                      return (
+                        <button
+                          key={ele.id}
+                          id={ele.id}
+                          className={activeFilter === ele.id ? "active" : ""}
+                          onClick={() => handleFilterClick(ele)}
+                        >
+                          {ele.name}
+                        </button>
+                      );
+                    })}
+                  </div>
                 </div>
-              </div>
 
-
-              <div className="filter_slider">
-                <div className="sliders">
-                  <p className="name">{activeFilter}</p>
-                  <p className="value">{`${sliderValue}%`}</p>
-                 
+                <div className="filter_slider">
+                  <div className="sliders">
+                    <p className="name">{activeFilter}</p>
+                    <p className="value">{`${sliderValue}%`}</p>
+                  </div>
+                  <input
+                    type="range"
+                    min="0"
+                    max={
+                      activeFilter === "Brightness" ||
+                      activeFilter === "saturation"
+                        ? "200"
+                        : "100"
+                    }
+                    value={sliderValue}
+                    onChange={handleSliderChange}
+                  />
                 </div>
-                <input
-                type="range"
-                min="0"
-                max={
-                  activeFilter === "Brightness" || activeFilter === "saturation"
-                    ? "200"
-                    : "100"
-                }
-                value={sliderValue}
-                onChange={handleSliderChange}
-              />
-              </div>
-              <div className="rotate">
-                   <div className="extra_features">
+                <div className="rotate">
+                  <div className="extra_features">
                     <span>Rotate & Flip</span>
-                   </div>
-                 <div className="btn">
-                 <button><GrRotateLeft/></button>
-                  <button><GrRotateRight/></button>
-                  <button><CgMergeVertical/></button>
-                  <button><CgMergeHorizontal/></button>
-                 </div>
+                  </div>
+                  <div className="btn">
+                    <button>
+                      <GrRotateLeft />
+                    </button>
+                    <button>
+                      <GrRotateRight />
+                    </button>
+                    <button>
+                      <CgMergeVertical />
+                    </button>
+                    <button>
+                      <CgMergeHorizontal />
+                    </button>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        <div className="image_Section">
-              <div className="image">
-          {
-            PreviewImg ? (
-              <img 
-               src={URL.createObjectURL(PreviewImg)}
-               alt="preview"
-               
-              />
-            ):(
-              <label htmlFor="choose">
-                <IoIosImage/>
-                <span>Choose Image</span>
+          <div className="image_Section">
+            <div className="image">
+              {PreviewImg ? (
+                <img src={URL.createObjectURL(PreviewImg)} alt="preview" />
+              ) : (
+                <label htmlFor="choose">
+                  <IoIosImage />
+                  <span>Choose Image</span>
                 </label>
-            )
-          }
-               
-              </div>
+              )}
+            </div>
+          </div>
         </div>
-      </div>
-      <Footer loadImage = {loadImage}  />
+        <Footer loadImage={loadImage} />
       </div>
     </div>
   );
